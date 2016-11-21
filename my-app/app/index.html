@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>App</title>
+		<style>
+		main,div,header,footer,aside {
+			border: 4px solid cyan;
+			padding: 10px;
+			margin: 10px;
+			border-radius: 10px;
+		}
+		main {
+			float: left;
+			width: 65%;
+		}
+		aside {
+			float: right;
+			border-color: maroon;
+			width: 30%;
+		}
+		div {
+			border-color: grey;
+		}
+		</style>
+		<link rel="stylesheet" href="scripts/libs/bootstrap/css/bootstrap.css">
+		<script src="scripts/libs/angular.js"></script>
+		<script>
+		</script>
+
+	</head>
+	<body>
+		<header>
+			<menu>
+				<ul class = "nav nav-pills">
+					<li> <a href = "#">Home</a></li>
+					<li> <a href = "#">About</a></li>
+					<li> <a href = "#">Contact</a></li>
+					<li> <a href = "#">Products</a></li>
+			</ul>
+			</menu>
+		</header>
+		<div id = "container" class = "container-fluid"></div>
+		<aside></aside>
+		<main></main>
+	</body>
+</html>
