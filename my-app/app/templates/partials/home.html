@@ -1,0 +1,13 @@
+<div>
+	<p>
+		{{message}}
+	</p>
+	<p>
+		{{curtime}}
+	</p>
+	<button ng-click="getTime()">Get Time</button>
+	<button ng-click="getTodos()">Get Todos</button>
+	<div ng-repeat = "todo in todos" ng-show="showTodos">
+		<ul> {{todo.status}} - {{todo.description}}</ul>
+	</div>
+</div>

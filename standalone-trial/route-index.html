@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>App</title>
+		<script type="text/javascript" src="angular.js"></script>
+		<script type="text/javascript" src="angular-route.js"></script>
+		<script>
+			var app = angular.module('myApp', ['ngRoute']);
+			app.config(['$routeProvider', function ($routeProvider) {
+				$routeProvider
+				// Home
+				.when("/", {templateUrl: "templates/partials/partial1.html", controller: "PageCtrl"})
+				//Template 1
+				.when("/template1", {templateUrl: "templates/partials/partial1.html", controller: "PageCtrl"})
+				//Template 2
+				.when("/template2", {templateUrl: "templates/partials/partial2.html", controller: "PageCtrl"})
+				.otherwise({redirectTo : "/error", templateUrl: "templates/partials/error.html", controller: "PageCtrl"});
+				}]);
+			app.filter('greet', function() {
+				return function (name, msg) {
+				console.log("I ran");
+				return msg+ " GM " + name;
+			}
+			});
+			app.controller('PageCtrl', function () {
+			console.log("Page Controller reporting for duty.");
+			});
+		</script>
+	</head>
+	<body data-ng-app = "myApp">
+		<a href="#/template1">Template1</a>
+		<a href="#/template2">Template2</a>
+		<div ng-view></div>
+	</body>
+</html>

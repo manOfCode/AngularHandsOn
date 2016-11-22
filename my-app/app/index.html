@@ -1,46 +1,50 @@
-<!DOCTYPE html>
 <html>
 	<head>
 		<title>App</title>
 		<style>
-		main,div,header,footer,aside {
-			border: 4px solid cyan;
-			padding: 10px;
-			margin: 10px;
-			border-radius: 10px;
-		}
-		main {
-			float: left;
-			width: 65%;
-		}
-		aside {
-			float: right;
-			border-color: maroon;
-			width: 30%;
-		}
-		div {
-			border-color: grey;
-		}
+			main,div,header,footer,aside,article {
+				border: 4px solid cyan;
+				padding: 10px;
+				margin: 10px;
+				border-radius: 10px;
+			}
+			main {
+				float: left;
+				border-color: maroon;
+				width: 65%;
+			}
+			aside {
+				float: right;
+				border-color: maroon;
+				width: 30%;
+			}
+			div {
+				border-color: grey;
+			}
 		</style>
 		<link rel="stylesheet" href="scripts/libs/bootstrap/css/bootstrap.css">
 		<script src="scripts/libs/angular.js"></script>
-		<script>
-		</script>
-
+		<script src="scripts/libs/bower_components/angular-route/angular-route.js"></script>
+		
+		<script src="scripts/app.js"></script>
+		<script src="scripts/services/stringutil.js"></script>
+		<script src="scripts/controllers/main.js"></script>
+		<script src="scripts/controllers/home.js"></script>
+		<script src="scripts/controllers/about.js"></script>
+		<script src="scripts/controllers/contact.js"></script>
+		<script src="scripts/controllers/error.js"></script>
 	</head>
-	<body>
+	<body ng-app = "mainapp">
 		<header>
 			<menu>
 				<ul class = "nav nav-pills">
-					<li> <a href = "#">Home</a></li>
-					<li> <a href = "#">About</a></li>
-					<li> <a href = "#">Contact</a></li>
-					<li> <a href = "#">Products</a></li>
-			</ul>
+					<li> <a href = "#home">Home</a></li>
+					<li> <a href = "#about">About</a></li>
+					<li> <a href = "#contact">Contact</a></li>
+					<li> <a href = "#products">Products</a></li>
+				</ul>
 			</menu>
 		</header>
-		<div id = "container" class = "container-fluid"></div>
-		<aside></aside>
-		<main></main>
+		<div ng-view></div>
 	</body>
 </html>
