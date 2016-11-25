@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>App</title>
+		<style type="text/css">
+		div {
+			border: 4px solid grey;
+			padding: 10px;
+			border-radius: 10px;
+		}
+		</style>
+		<script type="text/javascript" src="angular.js"></script>
+		<script type="text/javascript" src="angular-route.js"></script>
+	</head>
+	<body ng-app="app">
+		<hello-directive></hello-directive>
+		<br>
+		<p hello-directive></p>
+		<br>
+		<h3 class="hello-directive"></h3>
+		Below is the directive coming from comment
+		<!--directive:hello-directive -->
+		<script type="text/javascript">
+		var app = angular.module('app', []);
+		app.directive('helloDirective', function() {
+			return {
+				restrict : 'EACM',
+				template : '<div>Hi There</div>',
+				replace : true
+			};
+		});
+		</script>
+	</body>
+</html>

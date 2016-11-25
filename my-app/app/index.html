@@ -1,30 +1,15 @@
 <html>
 	<head>
 		<title>App</title>
-		<style>
-			main,div,header,footer,aside,article {
-				border: 4px solid cyan;
-				padding: 10px;
-				margin: 10px;
-				border-radius: 10px;
-			}
-			main {
-				float: left;
-				border-color: maroon;
-				width: 65%;
-			}
-			aside {
-				float: right;
-				border-color: maroon;
-				width: 30%;
-			}
-			div {
-				border-color: grey;
-			}
-		</style>
+		<link rel="stylesheet" href="css/common.css">
 		<link rel="stylesheet" href="scripts/libs/bootstrap/css/bootstrap.css">
+		<link rel="stylesheet" href="scripts/libs/bower_components/angular-material/angular-material.css">
 		<script src="scripts/libs/angular.js"></script>
 		<script src="scripts/libs/bower_components/angular-route/angular-route.js"></script>
+		<script src="scripts/libs/bower_components/angular-animate/angular-animate.js"></script>
+		<script src="scripts/libs/bower_components/angular-aria/angular-aria.js"></script>
+		<script src="scripts/libs/bower_components/angular-messages/angular-messages.js"></script>
+		<script src="scripts/libs/bower_components/angular-material/angular-material.js"></script>
 		
 		<script src="scripts/app.js"></script>
 		<script src="scripts/services/stringutil.js"></script>
@@ -38,13 +23,13 @@
 		<header>
 			<menu>
 				<ul class = "nav nav-pills">
-					<li> <a href = "#home">Home</a></li>
-					<li> <a href = "#about">About</a></li>
-					<li> <a href = "#contact">Contact</a></li>
-					<li> <a href = "#products">Products</a></li>
+					<li> <a class="myMenuItem" href = "#home">Home</a></li>
+					<li> <a class="myMenuItem" href = "#about">About</a></li>
+					<li> <a class="myMenuItem" href = "#contact">Contact</a></li>
+					<li> <a class="myMenuItem" href = "#products">Products</a></li>
 				</ul>
 			</menu>
 		</header>
-		<div ng-view></div>
+		<div id="mainview" ng-view></div>
 	</body>
 </html>

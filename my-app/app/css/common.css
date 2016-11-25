@@ -1,0 +1,54 @@
+main,div,header,footer,aside,article {
+	border: 1px solid;
+	padding: 5px;
+	margin: 5px;
+	border-radius: 10px;
+}
+
+header {
+	font-weight: bold;
+	background-color: rgba(59, 89, 152, 0.96);
+}
+
+.myMenuItem {
+	color: white;
+}
+
+main {
+	float: left;
+	border-color: maroon;
+	width: 65%;
+}
+aside {
+	float: right;
+	border-color: maroon;
+	width: 30%;
+}
+
+div {
+	border-color: grey;
+}
+
+
+.md-button.md-raised.myButtons {
+	color : rgb(252, 252, 252);
+	background-color: rgba(59, 89, 152, 0.96);
+	border-radius: 5px;
+}
+
+.md-button.md-raised.myButtons:hover {
+	color : rgba(59, 89, 152, 0.96);
+	background-color: rgb(252, 252, 252);
+	border-radius: 5px;
+}
+
+#maincontainer {
+	margin: 1px;
+	padding: 1px;
+}
+
+#mainview {
+	margin: 1px;
+	padding: 1px;
+
+}

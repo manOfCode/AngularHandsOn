@@ -1,4 +1,4 @@
-var app = angular.module("mainapp", ['ngRoute', 'stringUtilService']);
+var app = angular.module("mainapp", ['ngRoute', 'stringUtilService', 'ngMaterial']);
 app.config(['$routeProvider', function ($routeProvider) {
 	$routeProvider
 	// Home

@@ -4,12 +4,12 @@
 	</aside>
 	<main>
 		<article class = "panel panel-primary" ng-repeat = "product in products | orderBy:'name' | filter: searchText">
-		<header class= "panel-heading"><strong>{{product.name}}</strong></header>
-		<div class="panel-body">
-		<div>{{product.description}}</div>
-		<div>{{product.price | currency:"&#8377; "}}</div>
-		<figure><img width = "40%" height= "25%" ng-src = images/{{product.img}}></figure>
-		</div>
-	</article>
+			<header class= "panel-heading myButtons"><strong>{{product.name}}</strong></header>
+			<div class="panel-body">
+				<div>{{product.description}}</div>
+				<div>{{product.price | currency:"&#8377; "}}</div>
+				<figure><img width = "40%" height= "25%" ng-src = images/{{product.img}}></figure>
+			</div>
+		</article>
 	</main>
 </div>
