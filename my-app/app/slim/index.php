@@ -171,19 +171,19 @@ $app->get(
     }*/
     
     $ob1 = new StdClass();
-    $ob1->description = "asdf";
+    $ob1->description = "This is not happening";
     $ob1->status = "incomplete";
-    $ob1->description = "asdfddddddddddd";
+    $ob1->description = "This is not happening";
 
     $ob2 = new StdClass();
-    $ob2->description = "asdf";
+    $ob2->description = "This is not happening";
     $ob2->status = "incomplete";
-    $ob2->description = "asdf";
+    $ob2->description = "This is not happening";
 
     $ob3 = new StdClass();
-    $ob3->description = "asdfasdf";
+    $ob3->description = "This is done!";
     $ob3->status = "complete";
-    $ob3->description = "asdf";
+    $ob3->description = "This is done!";
      $arr = array($ob1,$ob2,$ob3);
     echo json_encode($arr);
 
@@ -213,19 +213,19 @@ echo $todos;
 
 */
 $ob1 = new StdClass();
-$ob1->description = "asdf";
+$ob1->description = "This is not happening";
 $ob1->status = "incomplete";
-$ob1->description = "asdfddddddddddd";
+$ob1->description = "This is not happening";
 
 $ob2 = new StdClass();
-$ob2->description = "asdf";
+$ob2->description = "This is not happening";
 $ob2->status = "incomplete";
-$ob2->description = "asdf";
+$ob2->description = "This is not happening";
 
 $ob3 = new StdClass();
-$ob3->description = "asdfasdf";
+$ob3->description = "This is done!";
 $ob3->status = "complete";
-$ob3->description = "asdf";
+$ob3->description = "This is done!";
  $arr = array($ob1,$ob2,$ob3);
 echo json_encode($arr);
 

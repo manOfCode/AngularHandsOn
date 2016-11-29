@@ -5,7 +5,7 @@ main,div,header,footer,aside,article {
 	border-radius: 10px;
 }
 
-header {
+header,footer {
 	font-weight: bold;
 	background-color: rgba(59, 89, 152, 0.96);
 }

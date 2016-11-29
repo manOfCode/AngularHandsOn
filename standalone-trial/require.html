@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>App</title>
+		<style type="text/css">
+		div {
+			border: 4px solid grey;
+			padding: 10px;
+			border-radius: 10px;
+		}
+		</style>
+		<script type="text/javascript" src="angular.js"></script>
+		<script type="text/javascript" src="angular-route.js"></script>
+		<script type="text/javascript">
+			var app = angular.module('app', []);
+			app.controller('pCCtrl', function ($scope, $element, $attrs, $transclude) {
+				this.itemsCount = 0;
+				this.items = [];
+				this.msg = "test";
+				this.showItemsNo = function() {
+					console.log('in');
+					alert(this.items.length);
+				}
+				this.totalAmount = function() {
+					var totalAmount = 0;
+					for (var i=0; i< this.items.length; i++){
+						totalAmount+=this.items[i].price;
+					}
+				}
+			});
+			app.directive('productCollection', function() {
+				return {
+					link:function(scope, element, attrs, pCCtrl){
+						$scope.runme = function() {
+							alert(pCCtrl.itemsCount);
+						}
+					},
+					require: 'brush',
+					controllerAs: 'pcRef',
+					restrict : 'E',
+					template : '<div><button ng-click="runme()">asdf</button><h4>This is basket</h4><button ng-click="pCCtrl.totalAmount()">Total Amount</button><button ng-click="pCCtrl.showItemsNo()">Items Count</button></div>',
+					replace : true,
+				};
+			});
+			app.directive("brush", function(){
+				return {
+					restrict: 'A',
+					require: "productCollection",
+					controllerAs: 'cRef',
+					link: function(scope, element, attrs, pCCtrl){
+						pCCtrl.addItem({name : 'brush', price: 12});
+					},
+				}});
+			app.directive("cream", function(){
+				return {
+					require: "productCollection",
+					link: function(scope, element, attrs, pCCtrl){
+						pCCtrl.addItem({name : 'cream', price: 30});
+					},
+				}});
+			app.directive("lipstick", function(){
+				return {
+					require: "productCollection",
+					link: function(scope, element, attrs, pCCtrl){
+						pCCtrl.addItem({name : 'lipstick', price: 300});
+					},
+				}});
+		</script>
+	</head>
+	<body ng-app="app" ng-controller="pCCtrl" as "pCCtrlOb">
+		<product-collection cream brush lipstick></product-collection>
+	</body>
+</html>

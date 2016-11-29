@@ -1,4 +1,4 @@
-var app = angular.module("mainapp", ['ngRoute', 'stringUtilService', 'ngMaterial']);
+var app = angular.module("mainapp", ['ngRoute', 'stringUtilService', 'ngMaterial', 'ngResource']);
 app.config(['$routeProvider', function ($routeProvider) {
 	$routeProvider
 	// Home
@@ -8,6 +8,9 @@ app.config(['$routeProvider', function ($routeProvider) {
 	//Template 2
 	.when("/about", {templateUrl: "templates/partials/about.html", controller: "about"})
 	.when("/contact", {templateUrl: "templates/partials/contact.html", controller: "contact"})
-	.when("/products", {templateUrl: "templates/partials/products.html", controller: "main"})
+	.when("/products", {templateUrl: "templates/partials/products-page.html", controller: "main"})
 	.otherwise({redirectTo : "/error", templateUrl: "templates/partials/error.html", controller: "main"});
 	}]);
+app.factory('Entry', function($resource){
+	return $resource('/api/comments/:id');
+});

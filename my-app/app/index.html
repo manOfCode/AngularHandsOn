@@ -10,6 +10,7 @@
 		<script src="scripts/libs/bower_components/angular-aria/angular-aria.js"></script>
 		<script src="scripts/libs/bower_components/angular-messages/angular-messages.js"></script>
 		<script src="scripts/libs/bower_components/angular-material/angular-material.js"></script>
+		<script src="scripts/libs/bower_components/angular-resource/angular-resource.js"></script>
 		
 		<script src="scripts/app.js"></script>
 		<script src="scripts/services/stringutil.js"></script>
@@ -17,10 +18,15 @@
 		<script src="scripts/controllers/home.js"></script>
 		<script src="scripts/controllers/about.js"></script>
 		<script src="scripts/controllers/contact.js"></script>
+		<script src="scripts/controllers/menu.js"></script>
 		<script src="scripts/controllers/error.js"></script>
 	</head>
 	<body ng-app = "mainapp">
 		<header>
+			<my-menu>Home,About,Contact,Products</my-menu>
+		</header>
+		<div id="mainview" ng-view></div>
+		<footer>
 			<menu>
 				<ul class = "nav nav-pills">
 					<li> <a class="myMenuItem" href = "#home">Home</a></li>
@@ -29,7 +35,6 @@
 					<li> <a class="myMenuItem" href = "#products">Products</a></li>
 				</ul>
 			</menu>
-		</header>
-		<div id="mainview" ng-view></div>
+		</footer>
 	</body>
 </html>

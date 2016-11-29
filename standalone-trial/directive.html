@@ -12,21 +12,31 @@
 		<script type="text/javascript" src="angular.js"></script>
 		<script type="text/javascript" src="angular-route.js"></script>
 	</head>
-	<body ng-app="app">
-		<hello-directive></hello-directive>
+	<body ng-app="app" >
+		<hello-directive><h3>H3 level heading</h3><p>Paragraph</p></hello-directive>
+		<hello-directive><h3>H3 level heading</h3><p>Paragraph</p></hello-directive>
 		<br>
-		<p hello-directive></p>
+		<!--<p hello-directive></p>
 		<br>
 		<h3 class="hello-directive"></h3>
-		Below is the directive coming from comment
+		Below is the directive coming from comment-->
 		<!--directive:hello-directive -->
 		<script type="text/javascript">
 		var app = angular.module('app', []);
+		app.controller('AppCtrl', function ($scope) {
+			$scope.name = "Shreeda";
+		});
 		app.directive('helloDirective', function() {
 			return {
+				//restrict : 'EACM',
 				restrict : 'EACM',
-				template : '<div>Hi There</div>',
-				replace : true
+				//template : '<div>Hi There {{name}} <div id="funny" ng-transclude></div></div>',
+				templateUrl : 'directive-template.html',
+				//transclude : true,
+				replace : true,
+				//Play with this and see.
+				//scope : {}
+				scope : false
 			};
 		});
 		</script>

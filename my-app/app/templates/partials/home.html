@@ -1,6 +1,7 @@
 <div>
 	<md-button ng-click="getTime()" class="md-button md-raised myButtons">Get Time</md-button>
 	<button ng-click="getTodos()" class="md-button md-raised myButtons">Get Todos</button>
+	<button ng-click="fetchAll()" class="md-button md-raised myButtons">Get Comments</button>
 	<div>
 		<p>
 			{{message}}
@@ -8,8 +9,16 @@
 		<p>
 			{{curtime}}
 		</p>
+		<p>
+			{{entries}}
+		</p>
 	</div>
-	<div ng-repeat = "todo in todos" ng-show="showTodos">
-		<ul> {{todo.status}} - {{todo.description}}</ul>
-	</div>
+	<md-list>
+		<md-list-item class="md-3-card"   ng-repeat="todo in todos">
+			<md-subheader class="md-no-sticky">
+				<p>{{todo.status}}</p>
+				<p> {{todo.status}} - {{todo.description}}</p>
+			</md-subheader>
+		</md-list-item>
+	</md-list>
 </div>

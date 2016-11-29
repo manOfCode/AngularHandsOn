@@ -1,5 +1,13 @@
 angular.module("mainapp")
-	.controller("main", MainFunc);
+	.controller("main", MainFunc)
+	.directive("products", function(){
+		return {
+			restrict: "EA",
+			templateUrl: 'templates/partials/products.html',
+			replace: true,
+			controller: 'main'
+		}
+	});
 
 function MainFunc($scope) {
 	$scope.appName = "Shreeda App";
