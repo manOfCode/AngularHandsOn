@@ -36,6 +36,11 @@ function HomeFunc($scope, $http, $sce, Entry) {
 		Entry.delete({id:$scope.id});
 		alert("Comment Deleted");
 	}
+	// Not working
+	// $scope.deleteComment = function() {
+	// 	$scope.singleComment.$delete();
+	// 	alert("Comment Deleted");
+	// }
 	$scope.postBack = function() {
 		Entry.save($scope.singleComment, function(){
 			alert("Modified Comment successfully");

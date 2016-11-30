@@ -1,0 +1,18 @@
+<html>
+<head>
+	<title>Title</title>
+	<meta charset="UTF-8" />
+	<script src="libs/angular.js" type="text/javascript">
+	</script>
+	<script src = "scripts/filter_array.js">
+	</script>
+</head>
+<body data-ng-app = "filterArray">
+	<div data-ng-init=
+	"customers = [{name:'jack'}, {name:'tina'}, {name:'johnson'}, {name:'donald'}]">
+	<h1>Customers</h1>
+	<ul>
+		<li data-ng-repeat="customer in customers | strln5">{{customer.name }}</li>
+		</ul></div>
+</body>
+</html>

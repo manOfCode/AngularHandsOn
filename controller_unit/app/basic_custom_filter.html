@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+<head>
+<script src = "angular.js"></script>
+<script src = "greeting-filter.js">
+</script>
+</head>
+<body ng-app = "myApp">
+<div ng-init=
+"customers = [{name:'SMith'}, {name:'tiya'}, {name:'Luke'}, {name:'Mac'}]">
+<h1>Customers</h1>
+<ul>
+<li data-ng-repeat="customer in customers">{{
+customer.name |greet }}</li>
+</ul>
+</div>

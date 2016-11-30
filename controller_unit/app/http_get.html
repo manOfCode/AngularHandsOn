@@ -1,0 +1,24 @@
+<html>
+<head>
+	<title>Title</title>
+	<meta charset="UTF-8" />
+	<script src="libs/angular.js">
+	</script>
+	<script src = "scripts/httpget.js">
+
+	</script>
+</head>
+<body>
+	<div ng-app="getModule" 
+	<div ng-controller="MyCtrl">
+
+		<div ng-repeat = "todo in todos">
+			
+			status is: {{todo.status}} and description is: {{todo.description}}
+		</div>
+		<div ng-bind-html = "errorMsg"></div>
+		<button ng-click="callServer()">Show Number</button> 
+	</div>
+</div>
+</body>
+</html>

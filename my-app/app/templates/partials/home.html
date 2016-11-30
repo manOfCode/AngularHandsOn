@@ -2,7 +2,11 @@
 	<md-button ng-click="getTime()" class="md-button md-raised myButtons">Get Time</md-button>
 	<button ng-click="getTodos()" class="md-button md-raised myButtons">Get Todos</button>
 	<button ng-click="fetchAll()" class="md-button md-raised myButtons">Get Comments</button>
-	<div>
+	<br>
+	<input type="text" ng-model="id"><button ng-click="fetch()" class="md-button md-raised myButtons">Get this Comment Id</button><div><p>{{singleComment}}</p></div>
+	<br>
+	<input type="text" ng-model="id"><button ng-click="deleteComment()" class="md-button md-raised myButtons">Delete this Comment Id</button>
+<!-- 	<div>
 		<p>
 			{{message}}
 		</p>
@@ -12,8 +16,18 @@
 		<p>
 			{{entries}}
 		</p>
-	</div>
+	</div> -->
 	<md-list>
+		<h2>Comments</h2>
+		<md-list-item class="md-3-card"   ng-repeat="entry in entries">
+			<md-subheader class="md-no-sticky">
+				<p>{{entry.id}}</p>
+				<p> {{entry.id}} - {{entry.description}}</p>
+			</md-subheader>
+		</md-list-item>
+	</md-list>
+	<md-list>
+		<h2>Todos</h2>
 		<md-list-item class="md-3-card"   ng-repeat="todo in todos">
 			<md-subheader class="md-no-sticky">
 				<p>{{todo.status}}</p>
@@ -21,4 +35,20 @@
 			</md-subheader>
 		</md-list-item>
 	</md-list>
+
+<!-- 	<md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">Card with image</span>
+            <span class="md-subhead">Large</span>
+          </md-card-title-text>
+          <md-card-title-media>
+            <div class="md-media-lg card-media"></div>
+          </md-card-title-media>
+        </md-card-title>
+        <md-card-actions layout="row" layout-align="end center">
+          <md-button>Action 1</md-button>
+          <md-button>Action 2</md-button>
+        </md-card-actions>
+    </md-card> -->
 </div>
